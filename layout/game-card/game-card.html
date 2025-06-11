@@ -1,0 +1,8 @@
+<div class="game-card" style="width: {{((50+(3*2))*card.col)}}px;" ng-class="{'c-perfect': card.isPointPerfect, 'c-computed': card.isPointComputed }">
+    <div ng-class="{'t-1': tile.value, 't-c': tile.point === 1, 't-x': tile.point === 0}" ng-click="toggleTile($index)" data-ng-repeat="tile in card.tiles track by $index" class="game-card-tile">
+      <!-- {{tile.value}} {{tile.point}} -->&nbsp;
+      <span class="fa fa-check" ng-if="card.isPointComputed && tile.point === 1"></span>
+      <span class="fa fa-times" ng-if="card.isPointComputed && tile.point === 0"></span>
+      &nbsp;
+    </div>
+</div>

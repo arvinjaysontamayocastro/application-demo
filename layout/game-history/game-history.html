@@ -1,0 +1,13 @@
+<h3 class="game-history-title">Recent Games ({{history.length >= 10 ? '10 / ' + history.length : history.length + "/" + history.length}})</h3>
+<table class="game-history">
+  <tr class="game-history-card">
+    <td class="c-result"></td>
+    <td class="c-level">Level</td>
+    <td class="c-score">Score</td>
+  </tr>
+  <tr ng-class="{'c-win': card.isPointPerfect, 'c-lose': !card.isPointPerfect}"  data-ng-repeat="card in history | limitTo:10 track by $index" class="game-history-card">
+    <td class="c-result">{{card.isPointPerfect ? 'Win' : 'Lose'}}</td>
+    <td class="c-level">{{card.level}}</td>
+    <td class="c-score">{{card.score}}</td>
+  </tr>
+</div>

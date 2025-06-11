@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+angular.module('myApp.readView', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'layout/view2/view2.html',
+  $routeProvider.when('/read-view', {
+    templateUrl: 'layout/read-view/read-view.html',
     controller: 'View2Ctrl'
   });
 }])

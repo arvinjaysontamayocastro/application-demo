@@ -2,4 +2,5 @@
 
 // Declare app level module which depends on views, and core components
 angular.module('myApp')
-.factory('gameFactory', gameFactory);
+.service('storeService', storeService)
+.service('gameService', gameService);

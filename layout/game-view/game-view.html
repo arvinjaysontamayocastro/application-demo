@@ -1,0 +1,36 @@
+<div class="playable-container" ng-class="{'loading': gameMode === gameModes.SET}">
+    <ng-game-card></ng-game-card>
+    <div class="playable-buttons">
+        <button ng-click="reveal()" ng-if="gameMode === gameModes.NEW">Reveal</button>
+        <button ng-click="submit()" ng-if="gameMode === gameModes.GAME">Submit</button>
+        <button ng-click="next()" ng-if="gameMode === gameModes.NEXT">Next</button>
+    </div>
+</div>
+
+<ng-game-history></ng-game-history>
+
+
+<!-- 
+<p>This is the partial for view 1.</p>
+
+Name Text: <br />
+<input type="text" data-ng-model="filter.name" /> {{ name }}
+<br />
+
+<div class="container">
+    <h3>Looping with the ng-repeat Directive</h3>
+    <ul>
+        <li data-ng-repeat="cust in customers | filter:filter.name" | orderBy:'name'">{{ cust.name | uppercase }} - {{ cust.city }}</div>
+    </ul>
+</div>
+<br />
+
+Name: <br />
+<input type="text" data-ng-model="newCustomer.name" />
+<br />
+<br />
+
+City: <br />
+<input type="text" data-ng-model="newCustomer.city" />
+<br />
+<button data-ng-click="addCustomer()">Add Customer</button> -->

@@ -1,25 +1,234 @@
 /* app css stylesheet */
+:root {
+  --color-main: #384075;
+  --color-pearl: #f8f8f8;
+  --color-brown: #503828;
+  --color-leaf: #afbd22;
+  --color-peppermint: #3caea3;
+  --color-glow: #f6d55c;
+  --color-ink: #091320;
+  --color-sakura: #f65c5c;
+  --color-silver: #888888;
+}
+html {
+  background-color: var(--pearl-color);
+}
+body {
+  display: flex;
+}
+.c-sidebar {
+  width: 300px;
+  background-color: var(--color-main);
+  min-height: 100vh;
+  color: var(--color-pearl);
+  display: block;
+  padding: 36px;
+  box-sizing: border-box;
+}
+
+.c-sidebar a {
+  color: var(--color-pearl);
+}
+
+.c-sidebar li {
+  font-size: .88em;
+}
+
+
+.c-main {
+  flex: 1;
+}
+
+@media (max-width:800px){
+  body {
+    display: block;
+  }
+  .c-sidebar {
+    display: block;
+    width: 100%;
+    min-height: auto;
+  }
+  .c-main {
+    display: block;
+    width: 100%;
+  }
+}
 
 .menu {
   list-style: none;
-  border-bottom: 0.1em solid black;
   margin-bottom: 2em;
   padding: 0 0 0.5em;
+  text-align: center;
 }
 
-.menu:before {
+/* .menu:before {
   content: "[";
 }
 
 .menu:after {
   content: "]";
-}
+} */
 
 .menu > li {
   display: inline;
 }
+.menu > li > a {
+  background-color: var(--color-pearl);
+  display: inline-block;
+  color: var(--color-ink);
+  padding: 12px;
+  text-decoration: none;
+  border-bottom: solid 3px var(--color-pearl);
+  margin: 0 12px;
+}
+.menu > li > a.active {
+  border-color: var(--color-ink);
+}
+.game-card {
+  display: inline-block;
+  position: relative;
+  background-color: white;
+  padding: 6px;
+  background-color: var(--color-brown);
+  --border-angle: 0deg;
+  border: 0.5rem solid transparent;
+}
 
-.menu > li + li:before {
+
+@keyframes border-angle-rotate {
+  from { --border-angle: 0deg; }
+  to { --border-angle: 360deg; }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.game-card-tile {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-pearl);
+  cursor: pointer;
+  margin: 3px !important;
+}
+
+.game-card-tile.t-1 {
+  background-color: var(--color-glow);
+}
+
+.c-computed .fa {
+  color: transparent;
+  font-size: 2em;
+  padding-top: 8px;
+  display: inline-block;
+}
+
+.c-computed .t-x {
+  background-color: var(--color-silver);
+}
+
+.c-computed .t-x .fa {
+  color: var(--color-ink);
+}
+
+.c-computed .t-x.t-1 {
+  background-color: var(--color-sakura);
+}
+
+.c-computed .t-x.t-1 .fa {
+  color: var(--color-ink);
+}
+
+.c-computed .t-c.t-1 .fa {
+  color: var(--color-peppermint);
+}
+
+.c-win .c-result {
+  color: var(--color-peppermint);
+}
+.c-lose .c-result {
+  color: var(--color-sakura);
+}
+
+.playable-container {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+@keyframes blinker {
+  50% {
+    background-color: var(--color-glow);
+  }
+}
+.playable-container.loading .game-card {
+  box-shadow: 0px 2px 4px hsl(0 0% 0% / 25%);
+  animation: border-angle-rotate 3s infinite linear;
+  position: relative;
+  background: linear-gradient(var(--color-brown), var(--color-brown)) padding-box,
+  conic-gradient(
+    from var(--border-angle),
+    var(--color-brown) 50%,
+    var(--color-pearl)
+  )
+  border-box;
+  /* animation: blinker 1s linear infinite; */
+  /* border-style: dashed !important; */
+}
+
+.playable-buttons {
+  margin-top: 12px;
+  min-height: 50px;
+}
+.playable-buttons button {
+  border: Solid 1px var(--color-ink);
+  border-radius: 100px;
+  font-weight: bolder;
+  background-color: var(--color-peppermint);
+  color: var(--color-ink);
+  padding: 5px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* .menu > li + li:before {
   content: "|";
   padding-right: 0.3em;
+} */
+ .game-history-title {
+  max-width: 300px;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 36px;
+ }
+.game-history {
+  max-width: 300px;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 36px;
+}
+
+.game-history-card {
+
+}
+.c-reader {
+  padding: 36px;
+}
+.game-history-card .c-win {
+
+}
+.game-history-card .c-lose {
+
+}
+.game-history-card .c-level {
+
+}
+.game-history-card .c-score {
+
+}
+.game-history-card .c-result {
+
 }
