@@ -23,7 +23,7 @@ This is a simple game that uses AngularJS, Javascript, CSS, HTML
     Code Pipeline
 
 # To test online:
-1. visit: http://angularjsdemobucket.s3-website-ap-southeast-2.amazonaws.com/#!/view1
+1. visit: http://angularjsdemobucket.s3-website-ap-southeast-2.amazonaws.com/#!/game-view
 
 # To test locally
 1. install node, npm
