@@ -255,8 +255,8 @@ body {
     bottom: 100px;
     border-radius: 100%;
     opacity: .139;
-  background-color: var(--color-main);
-  animation: changebgc 100s infinite;
+    background-color: var(--color-main);
+    animation: changebgc 100s infinite;
 }
 .background .b2 {
     width: 900px;
@@ -270,8 +270,8 @@ body {
     bottom: -100px;
     border-radius: 100%;
     opacity: .139;
-  background-color: var(--color-main);
-  animation: changebgc 200s infinite;
+    background-color: var(--color-main);
+    animation: changebgc 200s infinite;
 }
 .background .b3 {
     width: 333px;
@@ -285,8 +285,8 @@ body {
     bottom: 139px;
     border-radius: 100%;
     opacity: .139;
-  background-color: var(--color-main);
-  animation: changebgc 300s infinite;
+    background-color: var(--color-main);
+    animation: changebgc 300s infinite;
 }
 @keyframes changebgc {
   3% {
